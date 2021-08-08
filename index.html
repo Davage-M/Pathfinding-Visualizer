@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pathfinding</title>
+
+  <link rel="stylesheet" type="text/css" href="src/style.css" />
+
+</head>
+
+<body>
+  <div class="flexContainer">
+    <h1>Pathfinding Visualizer</h1>
+  </div>
+  <div class="flexContainer">
+
+    <div class="dropdown">
+      <button class="dropbtn" id="dropButton">Algorithms</button>
+      <div class="dropdown-content" id="dropContent">
+        <button class="dropdownContentButton" id="dijktraButton">Dijktra's Algorithm</button>
+        <button class="dropdownContentButton" id="aStarButtonNoTieBreaker">A* Algorithm <br>(No Tie
+          Breaker)</button>
+        <button class="dropdownContentButton" id="aStarButtonWithTieBreaker">A* Algorithm <br> (With Tie
+          Breaker)</button>
+      </div>
+    </div>
+
+    <div>
+      <button class="button" id="generateMazeButton">Generate Maze</button>
+    </div>
+
+    <div>
+      <button class="button" id="randomWallsButton">Random Walls</button>
+    </div>
+
+    <div>
+      <button class="button" id="clearButton">Clear Board</button>
+    </div>
+  </div>
+  <div id="mainGrid"></div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+html, body {
+  background-color: white;
+  margin: 0;
+}
+
+#mainGrid {
+  height: 79vh;
+  width: 99vw;
+  margin: auto;
+  display: grid;
+  grid-template: repeat(21, 1fr) / repeat(41, 1fr);
+}
+
+.node {
+  background-color: rgb(230, 217, 177);
+  border: 1px blue solid;
+}
+
+.nodeVisit {
+  animation-name: visitedAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.nodeWall {
+  animation-name: turnToWall;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.nodePath {
+  animation-name: shortestPath;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.nodeStart {
+  background-color: rgb(255, 254, 106);
+  border: 1px black solid;
+}
+
+.nodeStart.dragging {
+  opacity: 0.5;
+}
+
+.nodeEnd {
+  background-color: red;
+  border: 1px black solid;
+}
+
+.nodeEnd.dragging {
+  opacity: 0.5;
+}
+
+.button {
+  background-color: rgb(47,38,38); 
+  color: white;
+  border-style: none;
+  font-weight: bold;
+  padding: 16px 32px;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  width: 225px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(0, 217, 159);
+  color: black;
+  border-radius: 5px;
+}
+
+.dropbtn {
+  background-color: rgb(47,38,38);
+  border-style: none;
+  color: white;
+  padding: 16px 32px;  
+  font-size: 16px;
+  width: 225px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropbtn::after {
+  content: "\25bc"; 
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+
+
+.dropdownContentButton {
+  background-color: rgb(47,38,38);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  width: 225px;
+  cursor: pointer;
+  
+}
+
+.dropdown-content button:hover {
+  background-color: rgb(0, 217, 159);
+  border: 1px rgba(0, 0, 66, 0.75) solid;
+  color:black;
+  font-weight: bold;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-color: rgb(47,38,38);
+  height: 10vh;
+}
+
+h1 {
+  color:white;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(0, 0, 66, 0.75);    
+  }
+
+  50% {
+    background-color: rgba(17, 104, 217, 0.75);
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: rgba(0, 217, 159, 0.75);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgba(0, 190, 218, 0.75);
+    border: 1px black solid;
+  }
+}
+
+@keyframes shortestPath {
+  0% {
+    transform: scale(0.6);
+    background-color: rgb(255, 254, 106);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: rgb(255, 254, 106);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgb(255, 254, 106);
+  }
+}
+
+@keyframes turnToWall {
+  0% {
+    transform: scale(0.6);
+    background-color:  rgb(147, 124, 93);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color:  rgb(147, 124, 93);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color:  rgb(30,30,30);
+  }
+
+}
