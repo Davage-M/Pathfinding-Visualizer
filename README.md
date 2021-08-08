@@ -1,0 +1,1 @@
+Pathfinding visualizer made with JavaScript, CSS, and HTML
